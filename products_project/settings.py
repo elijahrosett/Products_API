@@ -19,7 +19,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-
+try:
+    from products_project.local_settings import *
+except ImportError:
+    pass
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
