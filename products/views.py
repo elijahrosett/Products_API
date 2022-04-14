@@ -23,7 +23,7 @@ def products_list(request):
         serializer = ProductsSerializer(data=request.data)
         serializer.is_valid(raise_exception=True) 
         serializer.save()   
-        return Response(serializer.data, status.HTTP_400_BAD_REQUEST)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def product_detail(request, pk):
